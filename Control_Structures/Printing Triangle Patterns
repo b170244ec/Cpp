@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int row;
+    for (row=1;row<=10;row++)
+    {
+        for (int col=1;col<=row;col++)
+        {
+            cout<<"*";
+        }
+        for (int space=1; space<=10-row;space++)
+        {
+            cout<<" ";
+        }
+        cout<<"\t\t";
+        for (int column=10; column>=row;column--)
+        {
+            cout<<"*";
+        }
+        for(int n=1;n<row;n++)
+        {
+            cout<<" ";
+        }
+        cout<<"\t";
+        for(int spa=1; spa<=10-row;spa++)
+        {
+            cout<<" ";
+        }
+        for (int i=1;i<=row;i++)
+        {
+            cout<<"*";
+        }
+        cout<<"\t\t";
+        for (int space=1;space<row;space++)
+        {
+            cout<<" ";
+        }
+        for (int k=0;k<=10-row;k++)
+        {
+            cout<<"*";
+        }
+
+        
+        
+        cout<<"\n";
+    }
+    
+    return 0;
+}
+   
