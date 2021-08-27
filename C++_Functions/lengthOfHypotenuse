@@ -1,0 +1,26 @@
+Define a function hypotenuse that calculates the length of the hypotenuse of a right triangle when the other two sides are given. Use this function in a program to determine 
+the length of the hypotenuse for each of the following triangles. The function should take two arguments of type double and return the hypotenuse as a double.
+
+#include<iostream>
+using namespace std;
+#include<iomanip>
+#include<cmath>
+using std::setprecision;
+using std::setiosflags;
+double hypotenuse(double,double);
+int main()
+{
+    double side1,side2;
+    cout<<setiosflags(ios::fixed | ios::showpoint);
+    for (int i=0;i<3;i++)
+    {
+        cout<<"Enter two sides of a trianle: ";
+        cin>>side1>>side2;
+        cout<<"The length of hypotenuse is : "<<setprecision(1)<<hypotenuse(side1,side2)<<endl;
+    }
+    return 0;
+}
+double hypotenuse(double side1,double side2)
+{
+    return sqrt(side1*side1+side2*side2);
+}
