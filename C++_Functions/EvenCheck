@@ -1,0 +1,31 @@
+Write a program that inputs a series of integers and passes them one at a time to function even, which uses the modulus operator to determine whether an integer is even. 
+The function should take an integer argument and return true if the integer is even and false otherwise.
+
+#include<iostream>
+using namespace std;
+#include<iomanip>
+
+bool Even(int);
+int main()
+{
+    int x;
+    
+    for (int i=0;i<3;i++)
+    {
+        cout<<"Enter the number to be checked : ";
+        cin>>x;
+        if (Even(x))
+        {
+            cout<<x<<" is an even integer\n";
+        }
+        else
+        {
+            cout<<x<<" is not an even integer\n";
+        }
+    }
+    return 0;
+}
+bool Even(int x)
+{
+    return !(x%2);
+}
