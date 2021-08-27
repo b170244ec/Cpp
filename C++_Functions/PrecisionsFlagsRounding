@@ -1,3 +1,7 @@
+An application of function floor is rounding a value to the nearest integer. The statement y = floor(x+0.5); will round the number x to the nearest integer and assigns the result to the y. 
+Write a porgram that reads several numbers and uses the preceding statement to round each of these numbersto the nearest integer. 
+
+
 #include<iostream>
 #include<cmath>
 #include<iomanip>
