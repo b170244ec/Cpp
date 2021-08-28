@@ -1,0 +1,38 @@
+Computers are playing an increasing role in education. Write a program that will help an elementary school student learn multiplication. Use rand to produce two positive 
+one-digit integers. It should then type a question such as: How much is 6 times 7?. The student then types the answer. Your program checks the student's answer. 
+If it is correct, print "Very good!", and then ask another multiplication question. If the answer is wrong, print "No. Please try again." and then 
+let the student try the same question again repeatedly until the student finally gets it right. 
+
+
+
+#include<iostream>
+using namespace std;
+void multiplication(void);
+int main()
+{
+    srand(time(0));
+    multiplication();
+    return 0;
+}
+void multiplication(void)
+{
+    int x,y,response=0;
+    cout<<"Enter -1 to end: \n";
+    while(response !=-1)
+    {
+        x = rand()%10;
+        y = rand()%10;
+        cout<<"How much is "<<x<<"times "<<y<<"(-1 to end): "<<endl;
+        cin>>response;
+        while(response !=-1 && response != x*y)
+        {
+            cout<<"No. Please try again.\n ?"<<endl;
+            cin>>response;
+        }
+        if (response!=-1)
+        {
+            cout<<"Very Good: \n\n";
+        }
+    }
+    cout<<"That's all for now. Bye"<<endl;
+}
