@@ -1,0 +1,48 @@
+Write a function that takes an integer value and returns the number with its digits reversed. For example, given the number 7631, the function should return 1367.
+
+
+
+
+#include<iostream>
+using namespace std;
+int reversed(int,int);
+int counter(int);
+
+int main()
+{
+    int number,length,divider=1,reverse;
+    cout<<"Enter the number: ";
+    cin>>number;
+    length  = counter(number);
+    cout<<"length of number is: "<<length<<endl;
+    while(length>1)
+    {
+        length--;
+        divider *= 10;
+    }
+    cout<<"Divider is: "<<divider<<endl;
+    reversed(number,divider);
+    
+    return 0;
+}
+int counter(int number)
+{
+    int counter = 0;
+    while(number>0)
+    {
+        number = number/10;
+        counter += 1;
+    }
+    return counter;
+}
+int reversed(int number,int divider)
+{
+    while(number>0)
+    {
+        cout<<number%10;
+        number /= 10;
+    }
+}
+
+
+Note: Counter function and Divider are not requitred
