@@ -1,0 +1,39 @@
+An integer is said to be prime if it is divisible by only 1 and itself. For example, 2, 3, 5 and 7 are prime, but 4, 6, 8 and 9are not.  a) Write a function that determines
+whether a number is prime.  b) Use this function in a program that determines and prints all the prime numbers between 1 and 10,000. How many ofthese 10,000 numbers do you
+really have to test before being sure that you have found all the primes?
+
+#include<iostream>
+using namespace std;
+int isPrime(int);
+int main()
+{
+    cout<<"The prime numbers between 1 to 10,000 : ";
+    for (int i=2;i<=10000;i++)
+    {
+        if (isPrime(i))
+        {
+            cout<<i<<"\t";
+        }
+    }
+    return 0;
+}
+
+int isPrime(int num)
+{
+    int count =0;
+    for (int i=1;i<=num;i++)
+    {
+        if(num%i==0)
+        {
+            count += 1;
+        }
+    }
+    if (count==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
