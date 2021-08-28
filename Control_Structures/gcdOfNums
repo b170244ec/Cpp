@@ -1,0 +1,29 @@
+The greatest common divisor (GCD) of two integers is the largest integer that evenly divides each of the numbers. Write a function gcd that returns 
+the greatest common divisor of two integers.
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int number1,number2,small,gcd;
+    cout<<"ENter the numbers : ";
+    cin>>number1>>number2;
+    if (number1<number2)
+    {
+      small  = number1;   
+    }
+    else
+    {
+        small = number2;
+    }
+    for (int i=1;i<=small;i++)
+    {
+        if (number1%i == 0 && number2%i==0)
+        {
+            gcd = i;
+        }
+    }
+    cout<<gcd;
+    return 0;
+}
