@@ -1,0 +1,93 @@
+The use of computers in education is referred to as computer-assisted instruction (CAI). One problem that develops in CAI environments is student fatigue. This can be
+eliminated by varying the computer's dialogue to hold the student's attention. Modify the program of Exercise 3.35 so the various comments are printed for each correct answer
+and each incorrect answer as follows:
+Responses to a correct answer
+Very good!
+Excellent!
+Nice work!
+Keep up the good work!
+Responses to an incorrect answer
+No. Please try again.
+Wrong. Try once more.
+Don't give up!
+No. Keep trying.
+Use the random number generator to choose a number from 1 to 4 to select an appropriate response to each answer. Use a switch
+structure to issue the responses. 
+
+
+
+#include<iostream>
+using namespace std;
+
+void multiplication(void);
+void correctMessage(void);
+void incorrectMessage(void);
+#include<ctime>
+#include<cstdlib>
+
+int main()
+{
+    srand(time(0));
+    multiplication();
+    return 0;
+}
+void correctMessage(void)
+{
+    switch(rand()%4)
+    {
+        case 0:
+            cout<<"Very good!";
+            break;
+        case 1:
+            cout<<"Excellent!";
+            break;
+        case 2:
+            cout<<"Nice Work!";
+            break;
+        case 3:
+            cout<<"Keep up the good work!";
+            break;
+    }
+    cout<<"\n\n";
+}
+void incorrectMessage(void)
+{
+    switch(rand()%4)
+    {
+         case 0:
+             cout<<"No. Please try again:";
+             break;
+         case 1:
+             cout<<"Wrong. Try once more:";
+             break;
+         case 2:
+             cout<<"Don't give up:";
+             break;
+         case 3:
+             cout<<"No. Keep trying:";
+             break;
+    }
+    cout<<"\n\n";
+}
+void multiplication(void)
+{
+    int x,y, response=0;
+    cout<<"Enter -1 to end:\n";
+    while(response !=-1)
+    {
+        x = rand()%10;
+        y = rand()%10;
+        cout<<"How much is "<<x<<"times "<<y<<" enter(-1 to end) ?"<<endl;
+        cin>>response;
+        while(response !=-1 && response != x*y)
+        {
+            incorrectMessage();
+            cin>>response;
+        }
+        if (response !=-1)
+        {
+            correctMessage();
+        }
+    }
+    cout<<"That's all for now. Well done! \n";
+}
